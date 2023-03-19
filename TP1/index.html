@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <title>The Cocktail Finder</title>
+    </head>
+    <body class="background">
+        <div class="container">
+            <div class="row"> <!--le premier row sert pour la recherche par nom et le générateur de cocktail aléatoire-->
+                <h1 class="mt-4">The Cocktail Finder</h1>
+                <h1 class="mt-2 mb-5 italic">Find The Best Cocktail For You</h1>
+                <div class="col-md-6"> <!--recherche par nom-->
+                    <h3>Search a Cocktail by name</h3>
+                    <div class="input-group input-group-lg">
+                        <input type="text" id="searchText" placeholder="type cocktail's name" class="form-control my-3">
+                        <input type="submit" id="searchClick" class="btn btn-outline-secondary buttonBlue my-3" value="Browse">
+                    </div>
+                    <div id="searchCard" class="card reduce" style="display: none;"> <!--card pour aficher le cocktail, sa photo et ses ingrédients-->
+                        <img src="" id="searchPicture" class="card-img-top">    
+                        <h2 id="searchCocktailName" class="card-title blackText"></h2>    
+                        <h4 id="searchProducts" class="card-text blackText"></h4>
+                        
+                        
+                        <!--modal pour afficher la recette-->
+                        <button id="searchModalClick" type="button" class="btn btn-primary buttonBlue" data-bs-toggle="modal" data-bs-target="#searchModal" style="display: none">Show Recipe</button>
+                        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="searchModalTitle"></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                    <h3 id="searchRecipe" class="blackText"></h3>
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary buttonBlue" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 id="cocktailNotFound"class="italic" style="display: none";>Sorry, couldn't find this cocktail...</h2>
+                </div>
+
+
+                <div class="col-md-6"> <!--cocktail aléatoire-->
+                    <h3>Or...</h3>
+                    <button id="clickable" class="btn btn-lg my-3 buttonBlue">Suggest a Random Cocktail</button> 
+                    <div id="card" class="card reduce" style="display: none;">  <!--card pour l'affichage--> 
+                        <img src="" id="picture" class="card-img-top">    
+                        <h2 id="cocktailName" class="card-title blackText"></h2>    
+                        <h4 id="products" class="card-text blackText"></h4>
+                        
+                        <!--modal pour la recette-->
+                        <button id="secondClick" type="button" class="btn btn-primary buttonBlue" data-bs-toggle="modal" data-bs-target="#exampleModal" style="display: none">Show Recipe</button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTitle"></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                    <h3 id="recipe" class="blackText"></h3>
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary buttonBlue" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+            
+            
+            <div class="row"> <!--recherche par ingrédient-->
+                <h3 class="padding italic">Want a particular ingredient in your cocktail ?<br> Just type it bellow and we will propose you 4 cocktails including it !<br>
+                    Choose the one you want among the list and simply search it in the browser to know the recipe.
+                </h3>
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="input-group input-group-lg">
+                        <input type="text" id="ingredientText" placeholder="type an ingredient" class="form-control my-3">
+                        <input type="submit" id="ingredientClick" class="btn btn-outline-secondary buttonBlue my-3" value="Browse">
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div id="ingredientRow" class="row mt-5" style="display: none;"> <!--emplacements des 4 cocktails proposés suite à la recherche-->
+                <div class="col-md-3">
+                    <img id="propose1" class="img-fluid rounded-circle" src="">
+                    <h4 id="proposeText1" class="mt-2"></h4>
+                </div>
+                <div class="col-md-3">
+                    <img id="propose2" class="img-fluid rounded-circle" src="">
+                    <h4 id="proposeText2" class="mt-2"></h4>
+                </div>
+                <div class="col-md-3">
+                    <img id="propose3" class="img-fluid rounded-circle" src="">
+                    <h4 id="proposeText3" class="mt-2"></h4>
+                </div>
+                <div class="col-md-3">
+                    <img id="propose4" class="img-fluid rounded-circle" src="">
+                    <h4 id="proposeText4" class="mt-2"></h4>
+                </div>
+            </div>
+            
+            
+            <div class="row"> <!--cocktails "selection" fixes-->
+            <h3 class="padding italic">Our Favorite Cocktails</h3>
+            <div class="col-md-4">
+                <img src="https://www.thecocktaildb.com/images/media/drink/hbkfsh1589574990.jpg" class="imageSize border1">
+                <h4 class="mt-2">Whiskey Sour</h4>
+            </div>
+            <div class="col-md-4">
+                <img src="https://www.thecocktaildb.com/images/media/drink/jgvn7p1582484435.jpg" class="imageSize border2">
+                <h4 class="mt-2">Caipirinha</h4>
+            </div>
+            <div class="col-md-4">
+                <img src="https://www.thecocktaildb.com/images/media/drink/vsrsqu1472761749.jpg" class="imageSize border3">
+                <h4 class="mt-2">Grand Blue</h4>
+            </div>
+            </div>
+        </div>     
+            
+        <script src="script.js"></script>
+    </body>
+</html>

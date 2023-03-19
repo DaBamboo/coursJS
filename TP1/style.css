@@ -1,0 +1,42 @@
+body {text-align: center !important;}
+
+h1,h2,h3,h4 {color: aliceblue; font-weight: bold !important; text-shadow: 3px 3px 3px black !important;}
+
+
+.background {
+	background-image: url("BAR.png"); min-height: 100%; background-size: cover; background-repeat: no-repeat; background-position: center; 
+	background-attachment: fixed; 
+}
+
+
+.buttonBlue {
+	color: aliceblue !important; font-size: x-large !important; background-color: midnightblue !important;
+}
+
+.imageSize {
+	height: 300px; width: 400px;
+}
+
+.border1 {
+	border-radius: 0% 20%; border-width: 4px; border-color: whitesmoke; border-style: solid ; 
+}
+	
+.border2 {
+	border-radius: 11% 11%; border-width: 4px; border-color: whitesmoke; border-style: solid; 
+}
+	
+.border3 {
+	border-radius: 20% 0%; border-width: 4px; border-color: whitesmoke; border-style: solid; 
+}
+
+.padding {
+	padding-top: 80px; padding-bottom: 20px;
+}
+
+.italic {
+	font-style: italic ;
+}
+
+.blackText {
+	color: black; font-weight: normal !important; text-shadow: none !important;
+}
