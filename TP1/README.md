@@ -17,7 +17,7 @@ Pour rechercher un cocktail il suffit de taper son nom (en anglais) puis de cliq
 Si le nom tapé n'est pas trouvé dans la base de donnée, alors un message d'erreur s'affiche.<br>
 ![searchFail](searchError.png)
 
-Si votre recherche a donné un resultat, vous pouvez alors cliquer sur le bouton "Show Recipe" pour que la recette du cocktail en question vous soit donnée. Cette dernière apparaitra vie un message au milieu en haut de votre écran. 
+Si votre recherche a donné un résultat, vous pouvez alors cliquer sur le bouton "Show Recipe" pour que la recette du cocktail en question vous soit donnée. Cette dernière apparaitra via un message, au milieu en haut de votre écran. 
 ![cocktailRecipe](searchModal.png)
 
 <br>
@@ -31,7 +31,7 @@ La différence est que le cocktail affiché sera aléatoirement choisi, le but �
 
 <br>
 
-## Proposer des cocktails selon un ingrédients
+## Proposer des cocktails selon un ingrédient
 
 Cette fonctionnalité permet de proposer aléatoirement des cocktails en y intégrant une condition : un ingrédient des cocktails est choisi à l'avance par l'utilisateur.
 
@@ -49,7 +49,7 @@ Cette section, qui n'est pas interractive, a pour but d'etoffer quelque peu le s
 ## Concernant l'esthétique du site
 
 Pour ce qui est de l'esthétique du site, une grande partie est réalisée grâce à Bootstrap, qui a l'avantage d'avoir de nombreux modules préfaits, permettant de se concentrer sur l'ajout de fonctionnalités plutôt que sur la réalisation visuelle.<br>
-Je fais notamment référence ici aux "cards" dont je me sers pour la partie recherche de cocktail et proposition aléatoire, mais aussi pour les champs de texte à taper et les bouton, bien que ces derniers aient été quelques peu retouchés via le CSS.
+Je fais notamment référence ici aux "cards" dont je me sers pour la partie recherche de cocktail et proposition aléatoire, mais aussi pour les champs de texte à taper et les boutons, bien que ces derniers aient été quelques peu retouchés via le CSS.
 
 Le CSS sert donc pour cette page à la personnalisation du texte, à l'arrière plan, ainsi qu'aux formes des images de cocktails se trouvant dans la section favoris.
 
@@ -57,7 +57,7 @@ Le CSS sert donc pour cette page à la personnalisation du texte, à l'arrière 
 
 ## Sur le plan technique
 
-Pour ce qui est de la partie technique, on va utiliser pour site l'API du site <a href="https://www.thecocktaildb.com/api.php">TheCocktailDB</a> disponible à l'adresse suivante : 
+Pour ce qui est de la partie technique, on va utiliser pour l'API disponible sur le site <a href="https://www.thecocktaildb.com/api.php">TheCocktailDB</a> disponible à l'adresse suivante : 
 ```
 https://www.thecocktaildb.com/api.php
 ```
